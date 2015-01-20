@@ -272,10 +272,7 @@ public class PageProvider implements IPageProvider
 
 		if (page != null && !freshCreated)
 		{
-			if (renderCount != null && page.getRenderCount() != renderCount)
-			{
-				throw new StalePageException(page);
-			}
+
 		}
 
 		pageInstanceIsFresh = freshCreated;
@@ -300,10 +297,7 @@ public class PageProvider implements IPageProvider
 			{
 				pageInstance = storedPageInstance;
 				pageInstanceIsFresh = false;
-				if (renderCount != null && pageInstance.getRenderCount() != renderCount)
-				{
-					throw new StalePageException(pageInstance);
-				}
+
 			}
 			else
 			{
